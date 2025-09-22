@@ -5,5 +5,7 @@ This is a conceptually simple sorting algorithm. In each step, it separates a so
 We run this sorting algorithm on a completely random array of numbers (size: 100000), and repeat 1000 times.
 RESULT:
 ```
-(running)
+Average: 1.4060817515850068 seconds
+Minimum: 1.229198932647705 seconds
+Maximum: 2.0363264083862305 seconds
 ```
