@@ -28,11 +28,28 @@ def recursive_stalin_sort(input_list):
     sorted_purged = recursive_stalin_sort(purged)
     return sorted_purged + tolerated
 
-# TEST
-initial_array_random = [random.randint(1, 1000) for _ in range(100000)]
+# FOR TESTING
 
-startTime = time.time()
-sorted_array_random = recursive_stalin_sort(initial_array_random)
-endTime = time.time()
-diff = endTime - startTime
-print(f"\n\n\nDone in {diff:.12f} seconds")
+def get_result():
+    initial_array_random = [random.randint(1, 1000) for _ in range(100000)]
+    startTime = time.time()
+    sorted_array_random = recursive_stalin_sort(initial_array_random)
+    endTime = time.time()
+    diff = endTime - startTime
+    print(f"Done in {diff:.12f} seconds")
+    return diff
+
+results = []
+
+for i in range(1000):
+    results.append(get_result())
+
+
+average = sum(results) / len(results)
+
+min_value = min(results)
+max_value = max(results)
+
+print(f"Average: {average}")
+print(f"Minimum: {min_value}")
+print(f"Maximum: {max_value}")
